@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Food Sharing & Nutrition App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="w3-brown">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-brown w3-animate-right w3-top w3-text-white w3-large" style="z-index:3;width:250px;font-weight:bold;display:none;right:0;" id="mySidebar" role="navigation">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32">CLOSE</a>
+    <br>
+    <a href="javascript:void(0)" onclick="showSection('home'); w3_close();" class="w3-bar-item w3-button w3-center w3-padding-16">HOME</a>
+    <a href="javascript:void(0)" onclick="showSection('login'); w3_close();" class="w3-bar-item w3-button w3-center w3-padding-16">LOGIN</a>
+    <a href="javascript:void(0)" onclick="showSection('register'); w3_close();" class="w3-bar-item w3-button w3-center w3-padding-16">REGISTER</a>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
+    <span class="w3-left w3-padding">Food Sharing & Nutrition App</span>
+    <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer; display:none;" id="myOverlay"></div>
+
+<!-- Main Content -->
+<div class="w3-main w3-content" style="max-width:1600px;margin-top:83px;">
+    <div id="content">
+        <!-- Home Section -->
+        <section id="home" class="hidden">
+            <h1>Welcome to Our Community Platform</h1>
+            <p>Join us in making a difference by sharing, tracking, and planning for better nutrition.</p>
+            
+            
+            <div class="feature">
+                <h2>Share and Donate Food</h2>
+                <p>Help those in need by sharing surplus food with your community. Your contributions can make a significant impact on reducing food waste and supporting those less fortunate.</p>
+                <h3>How to Get Involved:</h3>
+                <ul>
+                    <li>Sign up to become a food donor.</li>
+                    <li>Connect with local shelters and food banks.</li>
+                    <li>Organize a food drive in your neighborhood.</li>
+                </ul>
+            </div>
+        
+            <div class="feature">
+                <h2>Track Your Nutrition</h2>
+                <p>Maintain a healthy lifestyle by tracking your daily intake of food and calories. Use our tools to monitor your nutrition and achieve your health goals.</p>
+                <h3>Tips for Effective Tracking:</h3>
+                <ul>
+                    <li>Log your meals daily for accuracy.</li>
+                    <li>Use portion control to manage calorie intake.</li>
+                    <li>Set personalized nutrition goals to stay motivated.</li>
+                </ul>
+            </div>
+        
+            <div class="feature">
+                <h2>Plan Your Meals</h2>
+                <p>Stay organized with personalized meal plans tailored to meet your dietary goals. Enjoy the convenience of having your meals planned out for the week.</p>
+                <h3>Meal Planning Strategies:</h3>
+                <ul>
+                    <li>Choose recipes that use similar ingredients to minimize waste.</li>
+                    <li>Batch cook meals to save time during the week.</li>
+                    <li>Incorporate seasonal produce for freshness and flavor.</li>
+                </ul>
+            </div>
+        
+            <div class="community">
+                <h2>Join Our Community</h2>
+                <p>Connect with others who are passionate about sharing food and healthy living. Participate in our forums, share tips, and encourage each other!</p>
+                <h3>Ways to Engage:</h3>
+                <ul>
+                    <li>Participate in community challenges.</li>
+                    <li>Share your recipes and meal prep ideas.</li>
+                    <li>Attend local workshops on nutrition and sustainability.</li>
+                </ul>
+            </div>
+        
+            <div class="sustainability">
+                <h2>Promote Sustainability</h2>
+                <p>Learn how you can contribute to a more sustainable food system. Every small action counts!</p>
+                <h3>Simple Steps to Be More Sustainable:</h3>
+                <ul>
+                    <li>Reduce food waste by composting leftovers.</li>
+                    <li>Choose locally sourced products to support local farmers.</li>
+                    <li>Opt for plant-based meals when possible.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Login Form -->
+<section id="login" class="hidden">
+    <h2>Login</h2>
+    <form id="loginForm">
+        <label for="loginUsername" class="form-label">Username:</label>
+        <input type="text" class="form-input" id="loginUsername" name="username" required>
+        
+        <label for="loginPassword" class="form-label">Password:</label>
+        <input type="password" class="form-input" id="loginPassword" name="password" required>
+        
+        <button type="submit" class="form-button">Login</button>
+    </form>
+    <p>Don't have an account? <a href="#register" onclick="showSection('register')">Register here</a></p>
+</section>
+
+<!-- Register Form -->
+<section id="register" class="hidden">
+    <h2>Register</h2>
+    <form id="registerForm">
+        <label for="registerUsername" class="form-label">Username:</label>
+        <input type="text" id="registerUsername" class="form-input" name="username" required>
+
+        <label for="registerEmail" class="form-label">Email:</label>
+        <input type="email" id="registerEmail" class="form-input" name="email" required>
+
+        <label for="registerPassword" class="form-label">Password:</label>
+        <input type="password" id="registerPassword" class="form-input" name="password" required>
+        
+        <button type="submit" class="form-button">Register</button>
+    </form>
+    <p>Already have an account? <a href="#login" onclick="showSection('login')">Login here</a></p>
+</section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-column">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#team" class="nav-link">Our Team</a></li>
+                <li><a href="#careers" class="nav-link">Careers</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Support</h3>
+            <ul>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#privacy" class="nav-link">Privacy Policy</a></li>
+                <li><a href="#terms" class="nav-link">Terms of Service</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Social</h3>
+            <ul>
+                <li><a href="https://twitter.com/yourprofile" target="_blank">Twitter</a></li>
+                <li><a href="https://facebook.com/yourprofile" target="_blank">Facebook</a></li>
+                <li><a href="https://instagram.com/yourprofile" target="_blank">Instagram</a></li>
+                <li><a href="https://linkedin.com/company/yourprofile" target="_blank">LinkedIn</a></li>
+            </ul>
+        </div>
+        
+    </footer>
+
+    <!-- Sections -->
+    <div id="content">
+        <section id="about" class="hidden">
+            <h2>About Us</h2>
+            <p>We are a community-focused organization committed to fighting food waste and promoting healthy living. Our platform connects individuals who have surplus food with those in need, fostering a sense of community and sustainability.</p>
+        </section>
+
+        <section id="services" class="hidden">
+            <h2>Our Services</h2>
+            <ul>
+                <li><strong>Food Sharing:</strong> Facilitate food donations to those in need.</li>
+                <li><strong>Nutrition Tracking:</strong> Monitor daily food intake and nutritional value.</li>
+                <li><strong>Meal Planning:</strong> Create personalized meal plans to achieve dietary goals.</li>
+            </ul>
+        </section>
+
+        <section id="team" class="hidden">
+            <h2>Our Team</h2>
+            <p>Meet our dedicated team of professionals passionate about making a difference. Our diverse backgrounds in nutrition, community service, and technology drive our mission to create a healthier planet.</p>
+        </section>
+
+        <section id="careers" class="hidden">
+            <h2>Careers</h2>
+            <p>Join our team! We are always looking for passionate individuals who want to contribute to our mission of reducing food waste and improving community health. Check our website for current openings and application instructions.</p>
+        </section>
+
+        <section id="faq" class="hidden">
+            <h2>Frequently Asked Questions</h2>
+            <p>Find answers to common questions about our services, food sharing, nutrition tracking, and meal planning. If you need further assistance, feel free to reach out to our support team.</p>
+        </section>
+
+        <section id="contact" class="hidden">
+            <h2>Contact Us</h2>
+            <p>Have questions or suggestions? We would love to hear from you! Reach out to us via email at support@example.com or call us at (123) 456-7890.</p>
+        </section>
+
+        <section id="privacy" class="hidden">
+            <h2>Privacy Policy</h2>
+            <p>Your privacy is important to us. We are committed to protecting your personal information and ensuring it is used responsibly. Read our full privacy policy for details on how we handle your data.</p>
+        </section>
+
+        <section id="terms" class="hidden">
+            <h2>Terms of Service</h2>
+            <p>By using our services, you agree to our terms and conditions. Please review them carefully before using our platform. If you have any questions, contact our support team.</p>
+        </section>
+    </div>
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
